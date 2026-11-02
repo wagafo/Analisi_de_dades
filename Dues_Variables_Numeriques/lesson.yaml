@@ -468,16 +468,22 @@
   FigureType: new
 
 - Class: cmd_question
-  Output: Ara usarem el paquet «plotluck» al R per suavitzar la variació
-    de la variable dependent i obtenir una idea sobre una possible relació
-    no lineal entre Y i X. Per fer això, l'ordre és plotluck(tasca,Y~X),
-    recordant que el nom del marc de dades és tasca, Y és el temps a realitzar
-    una tasca, i X és el nombre de membres de l'equip que realitza la tasca.
-    Entreu aquesta ordre ara.
-  CorrectAnswer: plotluck(tasca,Y~X)
-  AnswerTests: omnitest(correctExpr='plotluck(tasca,Y~X)')
-  Hint: Heu d'entrar «plotluck(tasca,Y~X)» per obtenir una traça de la relació
-    entre Y i X.
+  Output: Ara suavitzarem la variació de la variable dependent mitjançant una 
+    tècnic coneguda com Lowess o Loess. Ens permet obtenir una idea sobre 
+    una possible relación no lineal entre Y i X. Primer tornem a dibuixar
+    el diagrama de dispersió.
+  CorrectAnswer: plot(Y~X)
+  AnswerTests: omnitest(correctExpr='plot(Y~X)')
+  Hint: Heu d'entrar «plot(Y~X)» per obtenir el diagrama de dispersió de Y
+    contra X.
+
+- Class: figure
+  Output: Ara superposarem la curva suavitzada obtinguda amb el mètode
+    Lowess amb l'ordre lines(lowess(Y~X), col=2).
+  CorrectAnswer: lines(lowess(Y~X), col=2)
+  AnswerTests: omnitest(correctExpr='lines(lowess(Y~X), col=2)')
+  Hint: Heu d'entrar «lines(lowess(Y~X), col=2)» per obtenir una 
+    traça de la relació entre Y i X.
 
 - Class: mult_question
   Output: El nombre de membres òptim a l'equip (el que minimitza el temps
