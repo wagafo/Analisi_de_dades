@@ -308,6 +308,11 @@
   AnswerTests: omnitest(correctExpr='hist(fit.res)')
   Hint: Heu d'entrar «hist(fit.res)» per fer un histograma dels residus.
 
+- Class: text
+  Output: L'histograma ens permet avaluar si els residus tenen 
+    una distribució aproximadament normal, cosa que és un dels supòsits
+    perquè els resultats de la regressió lineal siguin fiables.
+
 - Class: figure
   Output: Encara un altre element de diagnòstic de l'anàlisi de regressió
     és la identificació d'observacions influents. Són observacions
@@ -397,7 +402,7 @@
 - Class: text
   Output: Com podeu veure, ara el pendent de la regressió s'ha reduït
     a 0.087. Era 1.127 abans, així que és un 13% més petit. Podem dir
-    que aquests casos són influent, sense els, l'efecte de la nota del
+    que aquests casos són influents, sense ells, l'efecte de la nota del
     parcial sobre la nota del final és més reduït.
 
 - Class: text
@@ -469,15 +474,15 @@
 
 - Class: cmd_question
   Output: Ara suavitzarem la variació de la variable dependent mitjançant una 
-    tècnic coneguda com Lowess o Loess. Ens permet obtenir una idea sobre 
-    una possible relación no lineal entre Y i X. Primer tornem a dibuixar
-    el diagrama de dispersió.
+    tècnica coneguda com Lowess o Loess. Ens permet obtenir una idea sobre 
+    una possible relación no lineal entre Y i X. Primer torneu a dibuixar
+    el diagrama de dispersió entrant l'ordre adequada.
   CorrectAnswer: plot(Y~X)
   AnswerTests: omnitest(correctExpr='plot(Y~X)')
   Hint: Heu d'entrar «plot(Y~X)» per obtenir el diagrama de dispersió de Y
     contra X.
 
-- Class: figure
+- Class: cmd_question
   Output: Ara superposarem la curva suavitzada obtinguda amb el mètode
     Lowess amb l'ordre lines(lowess(Y~X), col=2).
   CorrectAnswer: lines(lowess(Y~X), col=2)
